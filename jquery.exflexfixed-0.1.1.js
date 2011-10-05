@@ -1,5 +1,5 @@
 /*
- * 	exFlexFixed 0.1.0 - jQuery plugin
+ * 	exFlexFixed 0.1.1 - jQuery plugin
  *	written by Cyokodog	
  *
  *	Copyright (c) 2011 Cyokodog (http://d.hatena.ne.jp/cyokodog/)
@@ -20,17 +20,16 @@
 		c.target = c.targets.eq(idx);
 		c.index = idx;
 		c.target.css('position','fixed');
-		c._offset = c.target.offset();
+		c._win = $(window);
+		c._baseTop = c.target.offset().top - c._win.scrollTop();
 		c._margin = {
 			top : parseInt(c.target.css('margin-top')),
 			bottom : parseInt(c.target.css('margin-bottom'))
 		}
 		c._targetHeight = c.target.outerHeight();
-
 		c._cont = c.container ? $(c.container) : o._getContainer();
 		c._contBottom = c._cont.offset().top + c._cont.outerHeight();
-		c._leftPos = (c.target.offset().left - parseInt(c.target.css('margin-left')))- c._cont.offset().left + 1;
-		c._win = $(window);
+		c._baseLeft = (c.target.offset().left - parseInt(c.target.css('margin-left')))- c._cont.offset().left - c._win.scrollLeft();
 		o._setEvent();
 	}
 	$.extend($.ex.flexFixed.prototype, {
@@ -49,31 +48,36 @@
 		_setEvent : function(){
 			var o = this, c = o.config;
 			var nextTop = prevTop = 0;
-			c._win.
-				scroll(function(){
-					var scrollTop = c._win.scrollTop();
-					var viewDff = 0;
-					if (c._win.height() < c._targetHeight){
-						viewDff = c._targetHeight - c._win.height() + c._margin.top + c._margin.bottom;
-					}
-					var downTop = (c._offset.top - c._margin.top) - scrollTop;
-					if (downTop + viewDff >= 0) {
-						nextTop = downTop;
+			var adjustPosition = function(){
+				var scrollTop = c._win.scrollTop();
+				var viewDff = 0;
+				if (c._win.height() < c._targetHeight){
+					viewDff = c._targetHeight - c._win.height() + c._margin.top + c._margin.bottom;
+				}
+				var downTop = (c._baseTop - c._margin.top) - scrollTop;
+				if (downTop + viewDff >= 0) {
+					nextTop = downTop;
+				}
+				else {
+					var bottomTop = c._contBottom - (scrollTop + c._targetHeight + c._margin.top + c._margin.bottom);
+					if (bottomTop + viewDff <= 0) {
+						nextTop = bottomTop;
 					}
 					else {
-						var bottomTop = c._contBottom - (scrollTop + c._targetHeight + c._margin.top + c._margin.bottom);
-						if (bottomTop + viewDff <= 0) {
-							nextTop = bottomTop;
-						}
-						else {
-							nextTop = - viewDff;
-						}
+						nextTop = - viewDff;
 					}
-					if (prevTop != nextTop) {
-						c.target.css('top',nextTop);
-					}
-					prevTop = nextTop;
-					o._setLeft();
+				}
+				if (prevTop != nextTop) {
+					c.target.css('top',nextTop);
+				}
+					c.target.css('top',nextTop);
+				prevTop = nextTop;
+				o._setLeft();
+			}
+			adjustPosition();
+			c._win.
+				scroll(function(){
+					adjustPosition();
 				}).
 				resize(function(){
 					o._setLeft();
@@ -81,7 +85,7 @@
 		},
 		_setLeft : function(){
 			var o = this, c = o.config;
-			c.target.css('left',c._cont.offset().left + c._leftPos - c._win.scrollLeft());
+			c.target.css('left',c._cont.offset().left + c._baseLeft - c._win.scrollLeft());
 		}
 
 	});
