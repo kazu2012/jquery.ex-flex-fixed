@@ -1,5 +1,5 @@
 /*
- * 	exFlexFixed 0.1.1 - jQuery plugin
+ * 	Ex Flex Fixed 0.1.2 - jQuery plugin
  *	written by Cyokodog	
  *
  *	Copyright (c) 2011 Cyokodog (http://d.hatena.ne.jp/cyokodog/)
@@ -23,8 +23,8 @@
 		c._win = $(window);
 		c._baseTop = c.target.offset().top - c._win.scrollTop();
 		c._margin = {
-			top : parseInt(c.target.css('margin-top')),
-			bottom : parseInt(c.target.css('margin-bottom'))
+			top : parseInt(c.target.css('margin-top')) || 0,
+			bottom : parseInt(c.target.css('margin-bottom')) || 0
 		}
 		c._targetHeight = c.target.outerHeight();
 		c._cont = c.container ? $(c.container) : o._getContainer();
