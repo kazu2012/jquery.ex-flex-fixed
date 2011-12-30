@@ -1,5 +1,5 @@
 /*
- * 	Ex Flex Fixed 0.1.2 - jQuery plugin
+ * 	Ex Flex Fixed 0.1.3 - jQuery plugin
  *	written by Cyokodog	
  *
  *	Copyright (c) 2011 Cyokodog (http://d.hatena.ne.jp/cyokodog/)
@@ -46,13 +46,6 @@
 //		c._baseTop = c.target.offset().top - c._win.scrollTop();
 		c._baseTop = c.target.offset().top;
 
-
-setInterval(function(){
-		c.target.css('position','static');
-		c._baseTop = c.target.offset().top;
-		c.target.css('position','fixed');
-},1000);
-
 		c._margin = {
 			top : parseInt(c.target.css('margin-top')) || 0,
 			bottom : parseInt(c.target.css('margin-bottom')) || 0
@@ -62,6 +55,7 @@ setInterval(function(){
 		c._contBottom = c._cont.offset().top + c._cont.outerHeight();
 		c._baseLeft = (c.target.offset().left - parseInt(c.target.css('margin-left')))- c._cont.offset().left - c._win.scrollLeft();
 		o._setEvent();
+		!c.watchPosition || o.watchPosition();
 	}
 	$.extend($.ex.flexFixed.prototype, {
 		_getContainer : function(){
@@ -92,6 +86,18 @@ setInterval(function(){
 			var o = this, c = o.config;
 			c.target.css('left',c._cont.offset().left + c._baseLeft - c._win.scrollLeft());
 		},
+		watchPosition : function(){
+			var o = this, c = o.config;
+			if (c.watchPosition){
+				if(isNaN(c.watchPosition)){
+					c.watchPosition = 300;
+				}
+				setTimeout(function(){
+					o.resetTop();
+					o.watchPosition();
+				},c.watchPosition);
+			}
+		},
 		resetTop : function(){
 			var o = this, c = o.config;
 			c.target.css('position','static');
@@ -119,10 +125,10 @@ setInterval(function(){
 					c.nextTop = - viewDff;
 				}
 			}
-			if (c.prevTop != c.nextTop) {
-				c.target.css('top',c.nextTop);
-			}
-				c.target.css('top',c.nextTop);
+//			if (c.prevTop != c.nextTop) {
+//				c.target.css('top',c.nextTop);
+//			}
+			c.target.css('top',c.nextTop);
 			c.prevTop = c.nextTop;
 			o._setLeft();
 		}
@@ -131,6 +137,7 @@ setInterval(function(){
 	});
 	$.ex.flexFixed.defaults = {
 		api : false,
+		watchPosition : false,
 		container : null
 	}
 	$.fn.exFlexFixed = function(option){
