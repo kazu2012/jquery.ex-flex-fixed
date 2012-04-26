@@ -5,63 +5,122 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=8" />
 		<title>jQuery Ex Flex Fixed :: Demo</title>
 		<link rel="stylesheet" type="text/css" href="./demo.css">
-		<style>
-			body{
-				width:1900px;
-			}
-			div.ex-main-contents{
-				width:1700px;
-			}
-		</style>
-		<script src="./jquery-1.5.min.js"></script>
-		<script src="./jquery.exflexfixed-0.1.3.1.js"></script>
+		<script src="./jquery-1.7.1.min.js"></script>
+		<script src="./jquery.exflexfixed-0.2.0.js"></script>
+		<script src="./demo.js"></script>
 		<script>
-			jQuery(function($){
-				$('ul').exFlexFixed({
-					container : 'div.ex-main-contents'
+			jQuery(function(){
+				DEMO_adjustContainerHeight();
+				$('button.run').click(function(){
+					$('div.sub-contents,div.ext-contents').exFlexFixed({
+						container : 'div.contents-wrapper'
+					});
+					$(this).prop('disabled',true)
 				});
-			})	
+			});
 		</script>
 	</head>
 	<body>
+		<div class="header">
+			<h1>jQuery Ex Flex Fixed :: Demo</h1>
+			<button class="run">Ex Flex Fixedを適用する</button>
+		</div>
+		<div class="contents-wrapper">
+			<div class="sub-contents-wrapper">
+				<div class="sub-contents">
+					<h3>sub-contents</h3>
+					<ul>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-contents-wrapper">
+				<div class="main-contents">
+					<h3>main-contents</h3>
+		<div>
+		<p>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</p><p>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</p>
+		<p>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</p>
+		<p>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</p>
+		<p>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</p>
+		<p>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</p>
+		<p>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</p>
+		<p>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</p>
+		<p>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</p>
+		<p>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</p>
+		</div>
 
-<div class="ex-header">
-	<h1>jQuery Ex Flex Fixed :: Demo</h1>
-</div>
+				</div>
+			</div>
+			<div class="ext-contents-wrapper">
+				<div class="ext-contents">
+					<h3>ext-contents</h3>
+					<ul>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+						<li><a href="javascript:void(0)">item</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<h2>FOOTER</h2>
+		<p>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</p><p>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</p>
+		<p>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</p>
+		<p>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</p>
+		<p>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</p>
+		<p>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</p>
+		<p>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</p>
+		<p>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</p>
+		<p>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</p>
+		<p>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</p>
+		<p>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</p><p>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</p>
+		<p>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</p>
+		<p>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</p>
+		<p>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</p>
+		<p>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</p>
+		<p>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</p>
+		<p>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</p>
+		<p>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</p>
+		<p>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</p>
 
-<div class="ex-body">
-
-	<div class="ex-sub-contents">
-
-		<ul class="sidemenu">
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-			<li><a href="javascript:void(0)">menu-link</a></li>
-		</ul>
-
-
-
-	</div><!--
-	--><div class="ex-main-contents">
-<P>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</P><P>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</P><P>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</P><P>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</P><P>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</P>
-<P>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</P><P>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</P><P>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</P><P>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</P><P>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</P>
-<P>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</P><P>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</P><P>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</P><P>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</P><P>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</P>
-<P>Lorem ipsum interdum lorem vitae quisque eleifend non, integer maecenas nostra imperdiet urna lacinia, curabitur curae congue euismod fusce purus vitae vel dui litora aenean mollis turpis molestie etiam tellus congue.</P><P>Habitant semper diam tempus nulla ut mattis facilisis metus semper ornare scelerisque etiam malesuada curae, convallis vel congue dolor aliquam at ullamcorper pulvinar quis odio dapibus ullamcorper condimentum.</P><P>In at ante at varius ligula, pharetra curabitur semper adipiscing habitant fringilla, malesuada congue massa vehicula est ligula at ullamcorper sed tempus aliquam arcu aliquam ad, hendrerit cubilia nam in lorem duis phasellus.</P><P>Curae fusce iaculis fermentum fames phasellus ullamcorper cubilia consectetur risus curabitur cras, tempus pulvinar inceptos curae venenatis lobortis cras iaculis torquent aliquam, lorem laoreet ad turpis tincidunt mollis pellentesque nec etiam malesuada.</P><P>Cursus blandit vestibulum venenatis eu maecenas faucibus nisl amet, cursus inceptos tellus semper molestie quisque curae, nullam quis fusce eros aliquam class tristique duis elit fermentum taciti ullamcorper ligula neque pulvinar tempor.</P>
-	</div>
-</div><!-- ex-body-contents -->
-<div class="ex-footer">
-	<h2>FOOTER</h2>
-</div>
-
+		</div>
 	</body>
 </html>
