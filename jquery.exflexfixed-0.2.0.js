@@ -166,7 +166,7 @@
 			}
 			c.target.css({
 				top : top,
-				left : c._fixedOffset.left - c._win.scrollLeft() - c._orgMarginLeft + c._orgMarginRight + c._adjustLeft
+				left : c._fixedOffset.left - c._win.scrollLeft() - c._orgMarginLeft + c._orgMarginRight
 			});
 		}
 	});
