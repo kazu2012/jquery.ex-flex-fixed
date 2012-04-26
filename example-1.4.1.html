@@ -7,14 +7,24 @@
 		<link rel="stylesheet" type="text/css" href="./demo.css">
 		<script src="./jquery-1.7.1.min.js"></script>
 		<script src="./jquery.exflexfixed-0.2.0.js"></script>
+		<script src="./jquery.exequalheight-0.1.0.js"></script>
 		<script src="./demo.js"></script>
 		<script>
 			jQuery(function(){
+				DEMO_adjustContainerHeight();
 				DEMO_dynamicLayout();
 				$('button.run').click(function(){
+					var height_API = $('div.contents-wrapper > div').exEqualHeight({
+						api : true,
+						watchHeight : false,
+						windowResizeAdjust : false
+					});
 					$('div.sub-contents,div.ext-contents').exFlexFixed({
 						container : 'div.contents-wrapper',
-						watchPosition : true
+						watchPosition : true,
+						watchCallback : function(fixed_API){
+							height_API.adjust();
+						}
 					});
 					$(this).prop('disabled',true)
 				});

@@ -1,64 +1,101 @@
-html{
-	background:#e0e0e0;
-}
+/* 全体をセンタリング */
 body{
-	font-family: "メイリオ", Meiryo,Arial, Helvetica, "ヒラギノ角ゴPro W3", "MS Pゴシック", sans-serif;
-	font-size:85%;
-	margin:0 auto;
-	line-height:1.4;
-	width:900px;
-	color:#777;
+	font-family:arial;
+	font-size:90%;
+	margin :0 auto;
+	max-width : 1000px;
+	min-width : 600px;
+}
+
+/* clearfixでwrapperに高さを出す */
+div.contents-wrapper{
+	/zoom : 1;
+}
+div.contents-wrapper:after{
+	content : '';
+	display : block;
+	clear : both;
+}
+
+/* subを固定幅 */
+div.sub-contents-wrapper{
+	margin-right : -200px;
+	float : left;
+	width : 200px;
+	position : relative;
+	z-index:1;
+}
+/* extを%指定可変幅 */
+div.ext-contents-wrapper{
+	margin-left : -30%;
+	float : left;
+	width : 30%;
+	position : relative;
+	z-index:1;
+}
+/* margin,padding,borderをつける */
+div.sub-contents,
+div.ext-contents{
+	margin:16px;
+	padding:8px;
+	border:solid 4px #ccc;
+}
+
+
+/* メインコンテンツを可変幅 */
+div.main-contents-wrapper{
+	float : left;
+	width:100%;
+	position : relative;
+}
+div.main-contents{
+	margin:16px;
+	margin-left : 216px;
+	margin-right : 31.5%;
+	width : auto;
+	padding:8px;
+	border:solid 4px #ccc;
+}
+
+
+/* wpapper はblue系 */
+div.contents-wrapper{
+	background:#c0e0ff;
+}
+div.main-contents-wrapper{
+	background:#b0d0ff;
+}
+div.sub-contents-wrapper,
+div.ext-contents-wrapper{
+	background:#a0c0f0;
+}
+/* contents はgray系 */
+div.main-contents{
+	background:#e8e8e8;
+}
+div.sub-contents,
+div.ext-contents{
 	background:#f0f0f0;
-	border-left:solid 1px #d0d0d0;
-	border-right:solid 1px #d0d0d0;
 }
-h1,h2{
-	margin:1em 16px;
+
+
+/* 関係ないやつ */
+strong{
+	color:#777;
 }
-p{
-	margin:1em 16px;
-}
-a:visited,
 a{
-	color:#5588ff;
+	color:#0077aa;
 	text-decoration:none;
 }
-a:hover{
-	color:#003388;
+button.run{
+	margin:16px 0;
+	padding:4px 19px;
 }
-
-div.ex-header{
-	overflow:hidden;
-	height:150px;
-	border-bottom:solid 1px #d0d0d0;
-	background:#e8e8e8;
+a.del{
+	font-weight:bold;
+	color:#ff5577
 }
-div.ex-footer{
-	height:1000px;
-	border-top:solid 1px #fff;
-	background:#e8e8e8;
+a.add{
+	font-weight:bold;
+	color:#00aaff;
 }
-div.ex-body{
-	border-top:solid 1px #fff;
-	border-bottom:solid 1px #d0d0d0;
-}
-div.ex-header,
-div.ex-body,
-div.ex-footer{
-	border-left:solid 1px #fff;
-	border-right:solid 1px #fff;
-}
-div.ex-main-contents{
-	width:700px;
-	display:inline-block;
-	vertical-align:top;
-}
-div.ex-sub-contents{
-	width:198px;
-	display:inline-block;
-	vertical-align:top;
-}
-ul.sidemenu{
-	position:fixed;
-}
-
