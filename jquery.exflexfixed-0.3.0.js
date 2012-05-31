@@ -173,38 +173,6 @@
 				left : c._fixedOffset.left - c._win.scrollLeft() - c._orgMarginLeft
 			});
 
-
-
-/*
-			if(top < 0){
-				if(!c._fromTop)	top = 0;
-				if(top < winMinuseTargetGapHeight){
-					c._nowFixed = true;
-					if(winMinuseTargetGapHeight > 0){
-						top = 0;
-					}
-					else {
-						top = winMinuseTargetGapHeight;
-					}
-				}
-			}
-			else {
-				c._fromTop = true;
-			}
-			var containerBottom = c.containerOffset.top + c.container.outerHeight() - c._win.scrollTop();
-			var targetBottom = top + c.target.outerHeight() + c._orgMarginTop + c._orgMarginBottom;
-			var overBottom = targetBottom - containerBottom;
-			if(overBottom > 0){
-				c._nowFixed = false;
-				c._fromTop = false;
-				top = top - overBottom;
-			}
-			c.target.css({
-				top : top,
-				left : c._fixedOffset.left - c._win.scrollLeft() - c._orgMarginLeft
-			});
-*/
-
 		}
 	});
 	$.ex.flexFixed.defaults = {
